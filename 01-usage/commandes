@@ -1,0 +1,17 @@
+breakpoint set --file source.cpp --line 16
+breakpoint set --file source.cpp --line 18
+breakpoint set --file source.cpp --line 32
+breakpoint set --file source.cpp --line 44
+process launch
+process continue
+expression tab[0] = tab[1]
+process continue
+expression tab[2] = tab[1]
+process continue
+tread step-in
+expression -- count = 0
+process continue
+expression -- tmp = min[0]+min[1]+min[2]
+process continue
+expression biggest = min[0] > min[1] ? min[0] > min[2] ? min[0] : min[2] : min[1] > min[2] ? min[1] : min[2]
+process continue
